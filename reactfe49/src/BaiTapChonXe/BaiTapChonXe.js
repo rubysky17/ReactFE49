@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 
 export default class BaiTapChonXe extends Component {
-  //state
   state = {
     img: "./img/black-car.jpg",
   };
-  changeColor = (color) => {
+  handleChange = (color) => {
     this.setState({
       img: `./img/${color}-car.jpg`,
     });
@@ -14,63 +13,87 @@ export default class BaiTapChonXe extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-8">
-            <img src={this.state.img} width="500px" />
+          <div className="col-7">
+            <h1>Product</h1>
+            <img src={this.state.img} style={{ width: "100%" }} />
           </div>
-          <div className="col-4">
-            <div className="card text-left">
-              <div className="card-header">Change Color</div>
-              <div className="card-body">
-                {/* //xe đen */}
-                <div
-                  className="row"
-                  style={{ border: "1px solid #eee" }}
-                  onClick={() => {
-                    this.changeColor("black");
-                  }}
-                >
-                  <div className="col-3">
-                    <img src="./img/icon-black.jpg" style={{ width: "100%" }} />
-                  </div>
-                  <div className="col-9">
-                    <p>Crytal black</p>
-                    <p>Pearl</p>
-                  </div>
+          <div className="col-5">
+            <h1>Color</h1>
+            <div
+              className="card"
+              onClick={this.handleChange.bind(this, "black")}
+            >
+              <div className="row p-2">
+                <div className="col-3">
+                  <img
+                    src="./img/icon-black.jpg"
+                    className="card-img-top"
+                    style={{ width: "100%" }}
+                  />
                 </div>
-                {/* Xe đỏ */}
-                <div
-                  className="row"
-                  style={{ border: "1px solid #eee", marginTop: "5px" }}
-                  onClick={() => {
-                    this.changeColor("red");
-                  }}
-                >
-                  <div className="col-3">
-                    <img src="./img/icon-red.jpg" style={{ width: "100%" }} />
-                  </div>
-                  <div className="col-9">
-                    <p>Rallye Red</p>
-                    <p>Metallic</p>
-                  </div>
+                <div className="col-9 text-left">
+                  <p className="my-0">Black</p>
+                  <p className="my-0">Pearl</p>
                 </div>
-                {/* Xe xám */}
-                <div
-                  className="row"
-                  style={{ border: "1px solid #eee", marginTop: "5px" }}
-                  onClick={() => {
-                    this.changeColor("silver");
-                  }}
-                >
-                  <div className="col-3">
-                    <img
-                      src="./img/icon-silver.jpg"
-                      style={{ width: "100%" }}
-                    />
-                  </div>
-                  <div className="col-9">
-                    <p>Lunar Silver</p>
-                    <p>Metallic</p>
-                  </div>
+              </div>
+            </div>
+            <div
+              className="card"
+              onClick={() => {
+                this.handleChange("silver");
+              }}
+            >
+              <div className="row p-2">
+                <div className="col-3">
+                  <img
+                    src="./img/icon-silver.jpg"
+                    className="card-img-top"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+                <div className="col-9 text-left">
+                  <p className="my-0">Silver</p>
+                  <p className="my-0">Pearl</p>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card"
+              onClick={() => {
+                this.handleChange("red");
+              }}
+            >
+              <div className="row p-2">
+                <div className="col-3">
+                  <img
+                    src="./img/icon-red.jpg"
+                    className="card-img-top"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+                <div className="col-9 text-left">
+                  <p className="my-0">Red</p>
+                  <p className="my-0">Pearl</p>
+                </div>
+              </div>
+            </div>
+            <div
+              className="card"
+              onClick={() => {
+                this.handleChange("steel");
+              }}
+            >
+              <div className="row p-2">
+                <div className="col-3">
+                  <img
+                    src="./img/icon-steel.jpg"
+                    className="card-img-top"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+                <div className="col-9 text-left">
+                  <p className="my-0">Steel</p>
+                  <p className="my-0">Pearl</p>
                 </div>
               </div>
             </div>
@@ -82,5 +105,5 @@ export default class BaiTapChonXe extends Component {
 }
 //Các bước thực hiện 1 task:
 // - xây dựng giao diện
-// - Xác định nguồn lưu trự dữ liệu làm thay đổi giao diện ( xác định state ). Tổ chứ lưu trự
+// - Xác định nguồn lưu trự dữ liệu làm thay đổi giao diện ( xác định state ). Tổ chức lưu trữ
 // - Thực hiện xử lý chức năng

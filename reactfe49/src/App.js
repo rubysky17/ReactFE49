@@ -10,8 +10,8 @@ function App() {
     <div className="App">
       {/* <Styling /> */}
       {/* <RenderWithState /> */}
-      {/* <BaiTapChonXe /> */}
-      <RenderWithMap />
+      <BaiTapChonXe />
+      {/* <RenderWithMap /> */}
     </div>
   );
 }
