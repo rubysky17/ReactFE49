@@ -17,10 +17,11 @@ export default class ThuKinh extends Component {
                     <MK matKinh={matKinh} />
                     {/* Hinh anh mat kinh */}
                     <img src={matKinh.url} style={{
-                        width: "170px",
+                        width: "160px",
                         position: "absolute",
-                        left: "23%",
-                        top: "85px"
+                        left: "25%",
+                        top: "85px",
+                        opacity: 0.7,
                     }} />
                     {/* Anh model */}
                     <img src="/img/model.jpg" style={{ width: '270px' }} />
