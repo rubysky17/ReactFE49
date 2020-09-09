@@ -1,13 +1,9 @@
-
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 const stateDefault = {
     gioHang: [{
         maSP: 1, tenSP: "VinSmart Live", giaBan: 5700000, hinhAnh: "./img/vsphone.jpg", soLuong: 1
     }]
 }
 export const gioHangReducer = (state = stateDefault, action) => {
-    const notify = () => toast("số lượng không nhỏ hơn 1");
     switch (action.type) {
         case "THEM_GIO_HANG": {
             let gioHangMoi = [...state.gioHang]
@@ -46,8 +42,6 @@ export const gioHangReducer = (state = stateDefault, action) => {
             state.gioHang = gioHangMoi
             return { ...state }
         }
-
-
         default:
             return { ...state };
     }
