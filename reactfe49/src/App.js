@@ -1,13 +1,14 @@
 import React from "react";
 import "./App.css";
-import BTGH from "./BaiTapRedux/BaiTapGioHangRedux/BTGH";
-import ModalRedux from "./BaiTapRedux/BaiTapGioHangRedux/ModalRedux";
+import DanhSachSinhVien from "./FormReact/DanhSachSinhVien";
+import FormSinhVien from "./FormReact/FormSinhVien";
 
 function App() {
   return (
     <div className="App">
-      <BTGH />
-      <ModalRedux />
+      {/* <BTGH />
+      <ModalRedux /> */}
+      <DanhSachSinhVien />
     </div>
   );
 }
