@@ -1,8 +1,8 @@
-import { THEM_SINH_VIEN } from "../types/QuanLySinhVienTypes"
+import { THEM_SINH_VIEN } from '../Types/QuanLySInhVienType'
 
-export const themSinhVienAction = (sinhVien) => {
+export const themSinhVienAction = (data) => {
     return {
-        type: "THEM_SINH_VIEN",
-        sinhVien
+        type: THEM_SINH_VIEN,
+        data
     }
 }
