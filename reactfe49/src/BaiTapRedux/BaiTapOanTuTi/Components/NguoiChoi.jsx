@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import KetQua from './KetQua';
 import { connect } from "react-redux"
 import NutChon from './NutChon';
+import LeftPlayer from './LeftPlayer';
+import RightPlayer from './RightPlayer';
 
 class NguoiChoi extends Component {
     render() {
@@ -9,30 +11,14 @@ class NguoiChoi extends Component {
         return (
             <div className="row text-center" style={{ color: "white" }}>
                 <div className="col-3">
-                    <div className="row center-item">
-                        <img src={giaTriOanTuTi.hinhAnh.nguoiChoi} style={{ width: "100px" }} className="bg_white" />
-                        <div className="speech-bubble">
-                        </div>
-                    </div>
-                    <div className="row center-item mt-3">
-                        <img src="./img/oantutiGame/player.png" style={{ width: "100px" }} />
-                    </div>
+                    <LeftPlayer />
                     <NutChon />
                 </div>
                 <div className="col-6">
-                    <p className="display-4 text-warning">{giaTriOanTuTi.text !== "" ? giaTriOanTuTi.text : "Mời bạn chọn"}</p>
                     <KetQua />
                 </div>
                 <div className="col-3">
-                    <div className="row center-item">
-                        <img src={giaTriOanTuTi.hinhAnh.may} style={{ width: "100px" }} className="bg_white" />
-                        <div className="speech-bubble"></div>
-                    </div>
-
-                    <div className="row center-item mt-3">
-                        <img src="./img/oantutiGame/playerComputer.png" style={{ width: "100px" }} />
-
-                    </div>
+                    <RightPlayer />
                 </div>
             </div >
         )
