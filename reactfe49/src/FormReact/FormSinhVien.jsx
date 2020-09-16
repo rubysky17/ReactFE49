@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux"
+import { chinhSuaSinhVienAction } from '../redux/actions/QuanLySinhVienAction';
 
 class FormSinhVien extends Component {
+
     render() {
-        console.log(this.props.mangSinhVien);
         return (
             <div className="container-fluid">
                 <table className="table">
@@ -24,7 +25,12 @@ class FormSinhVien extends Component {
                                 <td>{sinhVien.email}</td>
                                 <td>{sinhVien.soDienThoai}</td>
                                 <td>
-                                    <button className="btn btn-warning mr-3">Chỉnh sửa</button>
+                                    <button className="btn btn-warning mr-3" onClick={() => {
+                                        //dispatch thông tin sinh viên cập nhật lại state, sinhVienEdit trên Redux
+                                        const action = chinhSuaSinhVienAction(sinhVien)
+                                        // Đưa dữ liệu lên reducer
+                                        this.props.dispatch(action)
+                                    }}>Chỉnh sửa</button>
                                     <button className="btn btn-danger">Xóa</button>
                                 </td>
                             </tr>

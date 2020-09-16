@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FormSinhVien from './FormSinhVien';
-import { themSinhVienAction } from '../redux/actions/QuanLySinhVienAction';
+import { capNhatSinhVienAction, themSinhVienAction } from '../redux/actions/QuanLySinhVienAction';
 import { connect } from "react-redux";
 
 class DanhSachSinhVien extends Component {
@@ -59,8 +59,17 @@ class DanhSachSinhVien extends Component {
         const action = themSinhVienAction(this.state.values);
         this.props.dispatch(action);
     }
+    // componentWillReceiveProps(newProps) {
+    //     //Lifecycle Chạy trước khi render
+    //     //Component không chạy lại setState
+    //     //Mỗi lần người dùng bấm chỉnh sửa thì props thay đổi newProps là Props mới (state.sinhVienEdit của redux) => đem props mới gán vào this.state.values
+    //     this.setState({
+    //         values: newProps.sinhVienEdit
+    //     })
+    // }
 
     render() {
+        let sinhVienEdit = this.state.values
         return (
             <div className='container-fluid'>
                 <form class="card" onSubmit={this.onHandleSubmit}>
@@ -72,24 +81,24 @@ class DanhSachSinhVien extends Component {
                             <div className="col-6">
                                 <div className="form-group">
                                     <p>Mã sinh viên</p>
-                                    <input className="form-control" name="maSinhVien" onChange={this.handleChange} />
+                                    <input className="form-control" name="maSinhVien" onChange={this.handleChange} value={sinhVienEdit.maSinhVien} />
                                     <p className="text-danger">{this.state.errors.maSinhVien}</p>
                                 </div>
                                 <div className="form-group">
                                     <p>Tên sinh viên</p>
-                                    <input className="form-control" name="tenSinhVien" onChange={this.handleChange} />
+                                    <input className="form-control" name="tenSinhVien" onChange={this.handleChange} value={sinhVienEdit.tenSinhVien} />
                                     <p className="text-danger">{this.state.errors.tenSinhVien}</p>
                                 </div>
                             </div>
                             <div className="col-6">
                                 <div className="form-group">
                                     <p>Email</p>
-                                    <input type_="email" className="form-control" name="email" onChange={this.handleChange} />
+                                    <input type_="email" className="form-control" name="email" onChange={this.handleChange} value={sinhVienEdit.email} />
                                     <p className="text-danger">{this.state.errors.email}</p>
                                 </div>
                                 <div className="form-group">
                                     <p>Số điện thoại</p>
-                                    <input className="form-control" name="soDienThoai" onChange={this.handleChange} />
+                                    <input className="form-control" name="soDienThoai" onChange={this.handleChange} value={sinhVienEdit.soDienThoai} />
                                     <p className="text-danger">{this.state.errors.soDienThoai}</p>
                                 </div>
                             </div>
@@ -98,6 +107,10 @@ class DanhSachSinhVien extends Component {
                     <div className="row">
                         <div className="col-12 text-right">
                             <button type="submit" className="btn btn-success">Xác nhận</button>
+                            <button type="button" className="btn btn-secondary" onClick={() => {
+                                let action = capNhatSinhVienAction(this.state.values);
+                                this.props.dispatch(action)
+                            }}>Cập nhật</button>
                         </div>
                     </div>
                 </form>
@@ -105,5 +118,16 @@ class DanhSachSinhVien extends Component {
             </div>
         )
     }
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props.sinhVienEdit.maSinhVien !== prevState.values.maSinhVien) {
+            //setState trong didUpdate phải có if
+            this.setState({
+                values: prevProps.sinhVienEdit
+            })
+        }
+    }
 }
-export default connect()(DanhSachSinhVien)
+const mapStateToProps = state => {
+    return { sinhVienEdit: state.QuanLySinhVienReducer.sinhVienEdit }
+}
+export default connect(mapStateToProps)(DanhSachSinhVien)
