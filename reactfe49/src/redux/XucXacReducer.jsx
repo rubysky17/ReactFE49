@@ -46,30 +46,30 @@ export const xucXacReducer = (state = stateDefault, action) => {
             state.banChon = banChonNew;
             return { ...state }
         }
-        case "PLAY_GAME": {
-            let mangXucXacMoi = [];
-            let tongSoNutRandom = 0;
-            for (let i = 0; i < 3; i++) {
-                let randomNumber = Math.floor((Math.random() * 6));
-                let xucXacNgauNhien = mangXucXac[randomNumber];
-                mangXucXacMoi.push(xucXacNgauNhien);
-                tongSoNutRandom += randomNumber + 1;
-            }
-            // có thể tính điểm xúc xắc bằng hàm reduce
-            // let tongSoNutRandom = mangXucXacMoi.reduce((tongDiem, xxnn, index) => {
-            //     return tongDiem += xxnn.ma;
-            // }, 0)
-            state.mangXucXac = mangXucXacMoi;
-            let diemChuan = 9
-            if (state.banChon === true && tongSoNutRandom > diemChuan) {
-                state.soBanThang += 1;
-            } else if (state.banChon === false && tongSoNutRandom <= diemChuan) {
-                state.soBanThang += 1;
-            }
-            state.tongBanChoi += 1
-            state.tongDiem = tongSoNutRandom
-            return { ...state }
-        }
+        // case "PLAY_GAME": {
+        //     let mangXucXacMoi = [];
+        //     let tongSoNutRandom = 0;
+        //     for (let i = 0; i < 3; i++) {
+        //         let randomNumber = Math.floor((Math.random() * 6));
+        //         let xucXacNgauNhien = mangXucXac[randomNumber];
+        //         mangXucXacMoi.push(xucXacNgauNhien);
+        //         tongSoNutRandom += randomNumber + 1;
+        //     }
+        //     // có thể tính điểm xúc xắc bằng hàm reduce
+        //     // let tongSoNutRandom = mangXucXacMoi.reduce((tongDiem, xxnn, index) => {
+        //     //     return tongDiem += xxnn.ma;
+        //     // }, 0)
+        //     state.mangXucXac = mangXucXacMoi;
+        //     let diemChuan = 9
+        //     if (state.banChon === true && tongSoNutRandom > diemChuan) {
+        //         state.soBanThang += 1;
+        //     } else if (state.banChon === false && tongSoNutRandom <= diemChuan) {
+        //         state.soBanThang += 1;
+        //     }
+        //     state.tongBanChoi += 1
+        //     state.tongDiem = tongSoNutRandom
+        //     return { ...state }
+        // }
     }
     return { ...state }
 }

@@ -7,7 +7,6 @@ import RightPlayer from './RightPlayer';
 
 class NguoiChoi extends Component {
     render() {
-        let { giaTriOanTuTi } = this.props
         return (
             <div className="row text-center" style={{ color: "white" }}>
                 <div className="col-3">
