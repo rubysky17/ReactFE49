@@ -1,25 +1,22 @@
-import { THEM_SINH_VIEN } from '../Types/QuanLySinhVienType';
-import { CHINH_SUA_SINH_VIEN } from "../Types/QuanLySinhVienType";
-import { CAP_NHAT_SINH_VIEN } from "../Types/QuanLySinhVienType";
-export const themSinhVienAction = (data) => {
-    return {
-        type: THEM_SINH_VIEN,
-        data
-    }
-}
-export const chinhSuaSinhVienAction = (sinhVien) => {
-    return {
-        type: CHINH_SUA_SINH_VIEN,
-        sinhVien
-    }
-}
-export const capNhatSinhVienAction = (sinhVien) => {
-    return {
-        type: CAP_NHAT_SINH_VIEN,
-        sinhVien
-    }
-}
-// export const actionName = (payload) => ({
-//     type: type,
-//     payload
-// })
+import { ONCHANGE_FORM } from "../Types/QuanLySinhVienType";
+import { THEM_SINH_VIEN } from "../Types/QuanLySinhVienType"
+import { XOA_SINH_VIEN } from "../Types/QuanLySinhVienType"
+import { CHINH_SUA_SINH_VIEN } from "../Types/QuanLySinhVienType"
+export const onChangeAction = (values, errors) => ({
+    type: ONCHANGE_FORM,
+    values,
+    errors
+})
+export const themSinhVienAction = (sinhVien) => ({
+    type: THEM_SINH_VIEN,
+    sinhVien
+})
+export const xoaSinhVienAction = (maSinhVien) => ({
+    type: XOA_SINH_VIEN,
+    maSinhVien
+})
+export const chinhSuaSinhVienAction = (sinhVien) => ({
+    type: CHINH_SUA_SINH_VIEN,
+    sinhVien
+})
+
