@@ -2,18 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 
 PostList.propTypes = {
-  post: PropTypes.array,
+  postList: PropTypes.array,
 };
 PostList.defaultProps = {
-  post: [],
+  postList: [],
 };
 
 function PostList(props) {
-  let { post } = props;
+  let { postList } = props;
   return (
-    <ul>
-      {post.map((item) => {
-        return <li key={item.id}>{item.title}</li>;
+    <ul className="post-list">
+      {postList.map((post, index) => {
+        return <li key={index}>{post.title}</li>;
       })}
     </ul>
   );
