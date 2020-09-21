@@ -6,6 +6,7 @@ import Todolist from "./Todolist";
 import TodoForm from "../TodoFrom/todoForm";
 import PostList from "../PostList/PostList";
 import Pagination from "../Pagination";
+import PostFilterForm from "../PostFilterForm/PostFilterForm";
 // "http://js-post-api.herokuapp.com/api/posts?_limit=10&_page=1"
 
 DanhSachTodo.propTypes = {};
@@ -22,6 +23,7 @@ function DanhSachTodo(props) {
   const [filters, setFilters] = useState({
     _limit: 10,
     _page: 1,
+    title_like: "",
   });
 
   //Hàm remove khi click vào todoList
@@ -70,6 +72,14 @@ function DanhSachTodo(props) {
     setFilters({ ...filters, _page: newPage });
     // console.log(newPage);
   }
+  function handleFilterChange(newFilter) {
+    console.log("newFilter:", newFilter);
+    setFilters({
+      ...filters,
+      _page: 1,
+      title_like: newFilter.searchTerm,
+    });
+  }
   return (
     <div>
       <h3 className="my-4 display-4">
@@ -81,6 +91,7 @@ function DanhSachTodo(props) {
       <TodoForm onSubmit={onSubmit} />
       <Todolist todoList={todoList} handleChangeRemove={handleChangeRemove} />
       <h3 className="my-4 display-4">Bài 4: Sử dụng useEffect để gọi API</h3>
+      <PostFilterForm onSubmit={handleFilterChange} />
       <PostList postList={postList} />
       <Pagination pagination={pagination} onChangePage={onChangePage} />
     </div>
