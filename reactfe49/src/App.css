@@ -1,0 +1,17 @@
+.actived {
+    color: white!important;
+    background-color: red;
+}
+
+li {
+    margin-right: 10px;
+}
+
+li a {
+    color: white!important;
+    text-decoration: none;
+}
+
+li:hover {
+    list-style: none!important;
+}
