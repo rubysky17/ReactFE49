@@ -1,4 +1,7 @@
 import { combineReducers } from 'redux';
-export const rootReducer = combineReducers({
+import { QuanLyPhimReducer } from "./QuanLyPhimReducer";
+import reduxThunk from 'redux-thunk';
 
+export const rootReducer = combineReducers({
+    QuanLyPhimReducer
 })
