@@ -13,7 +13,7 @@ export const layDanhSachPhimApiAction = () => {
   return async (dispatch) => {
     const { data } = await axios({
       url:
-        "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01",
+        "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP03",
       method: "get",
     });
     // sau khi lấy dữ liệu từ BE cề sử dũng hàm dispatch đưa dữ liệu lên reducer

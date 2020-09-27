@@ -2,6 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 
+//Ant design
+import "antd/dist/antd.css";
+// import { DatePicker } from "antd";
+import "./index.css";
+
 //-----------------------------Redux----------------------------------
 import { applyMiddleware, createStore } from "redux";
 import { rootReducer } from "./redux/rootReducer";

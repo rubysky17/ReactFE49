@@ -64,6 +64,11 @@ export default function Header() {
               Login
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" activeClassName="my-link" to="/hoc">
+              HOC
+            </NavLink>
+          </li>
         </ul>
       </div>
     </nav>
