@@ -1,0 +1,29 @@
+.card-padding {
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+}
+
+.card {
+    background-color: var(--white-color)!important;
+    border-radius: 0!important;
+}
+
+.card img {
+    border-radius: 0!important;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-title {
+    font-size: var(--fs-2);
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: left;
+}
+
+.card-text {
+    color: var(--black-color);
+    text-align: left;
+}

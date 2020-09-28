@@ -1,0 +1,2 @@
+export const LAY_DANH_MUC_KHOA_HOC = "LAY_DANH_MUC_KHOA_HOC";
+export const LAY_DANH_SACH = "LAY_DANH_SACH";

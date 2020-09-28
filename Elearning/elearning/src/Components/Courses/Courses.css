@@ -1,0 +1,88 @@
+.course-session {
+    background-color: var(--bg-color);
+    padding-top: 80px;
+}
+
+.course-session::after {
+    content: "";
+    display: block;
+    width: 100%;
+    margin-top: 80px;
+    height: 2px;
+    background-color: #f1f1f1;
+}
+
+.course-content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.course-session_left {
+    text-align: left;
+    font-weight: bolder;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 2px;
+}
+
+.course-session_left p {
+    margin-bottom: 15px;
+}
+
+.course-btn a {
+    color: var(--white-color);
+    background-color: var(--blue-color);
+    padding: 10px 30px;
+    border-radius: 4px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: var(--fs-1);
+    transition: all 0.5s;
+}
+
+.course-btn a:hover {
+    color: var(--white-color);
+    background-color: #62a39c;
+}
+
+.slick-arrow.slick-prev {
+    z-index: 10;
+    font-size: 17px;
+    background-color: var(--white-color);
+    width: 50px;
+    height: 50px;
+    color: var(--black-color);
+    border-radius: 50%;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: -2%;
+    transition: all 0.3s;
+}
+
+.slick-arrow.slick-prev svg {
+    position: absolute;
+    top: 32%;
+    left: 34%;
+}
+
+.slick-arrow.slick-next {
+    z-index: 10;
+    font-size: 17px;
+    background-color: var(--white-color);
+    width: 50px;
+    height: 50px;
+    color: var(--black-color);
+    border-radius: 50%;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.slick-arrow.slick-next svg {
+    position: absolute;
+    top: 32%;
+    right: 34%;
+}
+
+.slick-arrow.slick-next:hover, .slick-arrow.slick-prev:hover {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.37);
+}

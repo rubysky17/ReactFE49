@@ -1,0 +1,24 @@
+.navbar {
+    height: 90px;
+}
+
+.navbar-img {
+    width: 150px;
+    height: 30px;
+}
+
+.navbar-nav li {
+    padding: 10px;
+}
+
+.navbar-nav li a {
+    font-size: var(--fs-1);
+    color: black;
+    letter-spacing: 1px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.navbar-nav li a:hover {
+    color: var(--blue-color);
+}
